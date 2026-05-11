@@ -17,7 +17,7 @@
     .contact-detail-text p { color:var(--text-mid); font-size:.88rem; margin:0; }
     .contact-form { background:#fff; border-radius:14px; padding:40px; box-shadow:0 8px 36px rgba(21,101,192,.1); }
     .contact-form h3 { font-family:var(--ff-display); font-size:1.5rem; color:var(--blue-deep); margin-bottom:6px; }
-    .contact-form .form-sub { color:var(--text-mid); font-size:.88rem; margin-bottom:28px; }
+    .contact-form .form-sub { color:var(--text-mid); font-size:.88rem; margin-bottom:24px; }
     .form-group { margin-bottom:20px; }
     .form-group label { display:block; font-weight:600; font-size:.85rem; color:var(--blue-deep); margin-bottom:7px; }
     .form-group label .bn { font-family:var(--ff-bn); font-weight:400; color:var(--text-light); font-size:.8rem; margin-left:4px; }
@@ -27,10 +27,28 @@
       color:var(--text-dark); transition:border-color .2s; outline:none; background:#fff;
     }
     .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color:var(--blue-bright); }
-    .form-group textarea { min-height:140px; resize:vertical; }
+    .form-group textarea { min-height:160px; resize:vertical; }
     .form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-    .form-submit { width:100%; padding:15px; background:var(--blue-bright); color:#fff; border:none; border-radius:var(--radius); font-family:var(--ff-body); font-size:1rem; font-weight:700; cursor:pointer; transition:.2s; }
+    .form-submit {
+      width:100%; padding:15px; background:var(--blue-bright); color:#fff;
+      border:none; border-radius:var(--radius); font-family:var(--ff-body);
+      font-size:1rem; font-weight:700; cursor:pointer; transition:.2s;
+      display:flex; align-items:center; justify-content:center; gap:10px;
+    }
     .form-submit:hover { background:var(--blue-deep); }
+    .form-submit:disabled { background:#90a4ae; cursor:not-allowed; }
+    .spinner { width:18px; height:18px; border:2px solid rgba(255,255,255,.4); border-top-color:#fff; border-radius:50%; animation:spin .7s linear infinite; display:none; }
+    .form-submit.loading .spinner { display:block; }
+    @keyframes spin { to { transform:rotate(360deg); } }
+    .form-message { display:none; padding:16px 20px; border-radius:var(--radius); font-size:.9rem; font-weight:600; margin-top:16px; text-align:center; }
+    .form-message.success { background:#e8f5e9; color:#2e7d32; border:1px solid #a5d6a7; display:block; }
+    .form-message.error   { background:#ffebee; color:#c62828; border:1px solid #ef9a9a; display:block; }
+    .form-message .bn { font-family:var(--ff-bn); display:block; font-size:.85rem; margin-top:4px; font-weight:400; }
+    .form-tabs { display:flex; gap:8px; margin-bottom:28px; flex-wrap:wrap; }
+    .tab-btn { flex:1; min-width:120px; padding:10px 8px; border:2px solid var(--blue-pale); background:#fff; border-radius:var(--radius); font-family:var(--ff-body); font-size:.82rem; font-weight:600; color:var(--text-mid); cursor:pointer; transition:.2s; }
+    .tab-btn.active { background:var(--blue-bright); border-color:var(--blue-bright); color:#fff; }
+    .tab-panel { display:none; }
+    .tab-panel.active { display:block; }
     @media(max-width:768px){ .contact-grid{grid-template-columns:1fr;} .form-row{grid-template-columns:1fr;} }
   </style>
 </head>
@@ -57,6 +75,8 @@
 
   <section class="section">
     <div class="contact-grid">
+
+      <!-- Left info -->
       <div class="contact-info">
         <h2>Let's Talk <span class="bn" style="font-size:.6em;display:block;color:var(--blue-bright)">কথা বলি</span></h2>
         <p>We represent your expression. Write us about how dare you are — and also let us know what you want from us.</p>
@@ -79,41 +99,59 @@
         </div>
       </div>
 
+      <!-- Right: tabbed forms -->
       <div class="contact-form">
         <h3>Send a Message</h3>
-        <p class="form-sub">Fill in the form below and we'll get back to you. / ফর্মটি পূরণ করুন, আমরা শীঘ্রই যোগাযোগ করব।</p>
-        <form id="contactForm">
-          <div class="form-row">
-            <div class="form-group">
-              <label>Your Name <span class="bn">নাম</span></label>
-              <input type="text" placeholder="John / জন" required/>
+        <p class="form-sub">Choose what you'd like to submit. / নিচে থেকে বেছে নিন।</p>
+
+        <div class="form-tabs">
+          <button class="tab-btn active" id="tab-btn-general" onclick="switchTab('general',this)">💬 General</button>
+          <button class="tab-btn" id="tab-btn-story" onclick="switchTab('story',this)">✍️ Submit Story</button>
+          <button class="tab-btn" id="tab-btn-opinion" onclick="switchTab('opinion',this)">🗣️ Opinion</button>
+        </div>
+
+        <!-- General -->
+        <div class="tab-panel active" id="tab-general">
+          <form id="generalForm">
+            <div class="form-row">
+              <div class="form-group"><label>Name <span class="bn">নাম</span></label><input type="text" name="name" placeholder="Your name" required/></div>
+              <div class="form-group"><label>Email <span class="bn">ইমেইল</span></label><input type="email" name="email" placeholder="you@example.com" required/></div>
             </div>
-            <div class="form-group">
-              <label>Email <span class="bn">ইমেইল</span></label>
-              <input type="email" placeholder="you@example.com" required/>
+            <div class="form-group"><label>Subject <span class="bn">বিষয়</span></label><input type="text" name="title" placeholder="What's on your mind?" required/></div>
+            <div class="form-group"><label>Message <span class="bn">বার্তা</span></label><textarea name="story" placeholder="Write your message... / এখানে লিখুন..." required></textarea></div>
+            <button type="submit" class="form-submit" id="generalBtn"><span class="btn-text">Send Message / পাঠাও</span><div class="spinner"></div></button>
+            <div class="form-message" id="generalMsg"></div>
+          </form>
+        </div>
+
+        <!-- Story -->
+        <div class="tab-panel" id="tab-story">
+          <form id="storyForm">
+            <div class="form-row">
+              <div class="form-group"><label>Name / Alias <span class="bn">নাম বা ছদ্মনাম</span></label><input type="text" name="name" placeholder="Anonymous is fine!" required/></div>
+              <div class="form-group"><label>Email <span class="bn">ইমেইল</span></label><input type="email" name="email" placeholder="you@example.com" required/></div>
             </div>
-          </div>
-          <div class="form-group">
-            <label>Purpose <span class="bn">উদ্দেশ্য</span></label>
-            <select required>
-              <option value="" disabled selected>Select a reason / কারণ বেছে নিন</option>
-              <option>Submit a Story / গল্প পাঠানো</option>
-              <option>Brand Collaboration / ব্র্যান্ড সহযোগিতা</option>
-              <option>Pricing Inquiry / মূল্য জিজ্ঞাসা</option>
-              <option>General Inquiry / সাধারণ প্রশ্ন</option>
-              <option>Other / অন্যান্য</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Subject <span class="bn">বিষয়</span></label>
-            <input type="text" placeholder="How dare I am..." required/>
-          </div>
-          <div class="form-group">
-            <label>Your Message <span class="bn">বার্তা</span></label>
-            <textarea placeholder="Tell us your daring story, your thoughts, or what you want from us... / তোমার সাহসী গল্প বা চাহিদা জানাও..." required></textarea>
-          </div>
-          <button type="submit" class="form-submit">Send Message / পাঠাও</button>
-        </form>
+            <div class="form-group"><label>Story Title <span class="bn">শিরোনাম</span></label><input type="text" name="title" placeholder="Give your story a bold title..." required/></div>
+            <div class="form-group"><label>Your Story <span class="bn">তোমার গল্প</span></label><textarea name="story" style="min-height:220px" placeholder="Write in English, Bengali, or both! / বাংলায়, ইংরেজিতে, বা দুটোতেই লিখো!" required></textarea></div>
+            <button type="submit" class="form-submit" id="storyBtn"><span class="btn-text">Submit Story / গল্প পাঠাও</span><div class="spinner"></div></button>
+            <div class="form-message" id="storyMsg"></div>
+          </form>
+        </div>
+
+        <!-- Opinion -->
+        <div class="tab-panel" id="tab-opinion">
+          <form id="opinionForm">
+            <div class="form-row">
+              <div class="form-group"><label>Name / Alias <span class="bn">নাম বা ছদ্মনাম</span></label><input type="text" name="name" placeholder="Anonymous is fine!" required/></div>
+              <div class="form-group"><label>Email <span class="bn">ইমেইল</span></label><input type="email" name="email" placeholder="you@example.com" required/></div>
+            </div>
+            <div class="form-group"><label>Topic <span class="bn">বিষয়</span></label><input type="text" name="title" placeholder="What are you daring to say?" required/></div>
+            <div class="form-group"><label>Your Opinion <span class="bn">তোমার মতামত</span></label><textarea name="story" style="min-height:200px" placeholder="Say it boldly — we amplify brave voices. / সাহস করে বলো।" required></textarea></div>
+            <button type="submit" class="form-submit" id="opinionBtn"><span class="btn-text">Share Opinion / মতামত দাও</span><div class="spinner"></div></button>
+            <div class="form-message" id="opinionMsg"></div>
+          </form>
+        </div>
+
       </div>
     </div>
   </section>
@@ -126,6 +164,56 @@
     </div>
     <div class="footer-bottom"><p>© 2025 Dare to Talk. All rights reserved.</p></div>
   </footer>
+
   <script src="../js/main.js"></script>
+  <script>
+    const SHEET_URL = 'https://script.google.com/macros/s/AKfycbymq3SOSQPpURoMYBRCM7jUlM6-pKCM9QKCxtoplkmBxx_luqGwdPw781wrfuBgyvIP3w/exec';
+
+    function switchTab(tab, btn) {
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('tab-' + tab).classList.add('active');
+      btn.classList.add('active');
+    }
+
+    function setupForm(formId, btnId, msgId, type) {
+      const form = document.getElementById(formId);
+      const btn  = document.getElementById(btnId);
+      const msg  = document.getElementById(msgId);
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        btn.disabled = true;
+        btn.classList.add('loading');
+        msg.className = 'form-message';
+        const data = {
+          name:  form.querySelector('[name="name"]').value,
+          email: form.querySelector('[name="email"]').value,
+          type:  type,
+          title: form.querySelector('[name="title"]').value,
+          story: form.querySelector('[name="story"]').value,
+        };
+        try {
+          await fetch(SHEET_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+          });
+          msg.className = 'form-message success';
+          msg.innerHTML = '✅ Submitted! We\'ll review it soon.<span class="bn">সফলভাবে পাঠানো হয়েছে! আমরা শীঘ্রই দেখব।</span>';
+          form.reset();
+        } catch(err) {
+          msg.className = 'form-message error';
+          msg.innerHTML = '❌ Something went wrong. Email us: samirkahn2025@gmail.com<span class="bn">সমস্যা হয়েছে। সরাসরি ইমেইল করুন।</span>';
+        }
+        btn.disabled = false;
+        btn.classList.remove('loading');
+      });
+    }
+
+    setupForm('generalForm', 'generalBtn', 'generalMsg', 'General Message');
+    setupForm('storyForm',   'storyBtn',   'storyMsg',   'Blog Story');
+    setupForm('opinionForm', 'opinionBtn', 'opinionMsg', 'Opinion');
+  </script>
 </body>
 </html>
