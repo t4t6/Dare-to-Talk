@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Team — Dare to Talk</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Barlow:wght@300;400;600&family=Noto+Sans+Bengali:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    .team-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:28px; }
+    .team-card { background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 4px 18px rgba(21,101,192,.1); transition:.25s; text-align:center; }
+    .team-card:hover { transform:translateY(-6px); box-shadow:0 14px 36px rgba(21,101,192,.2); }
+    .team-avatar { width:100%; height:200px; display:flex; align-items:center; justify-content:center; font-size:5rem; }
+    .team-info { padding:20px 18px 28px; }
+    .team-role { display:inline-block; background:var(--blue-pale); color:var(--blue-mid); font-size:.72rem; font-weight:700; padding:3px 12px; border-radius:20px; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px; }
+    .team-name { font-family:var(--ff-display); font-size:1.2rem; color:var(--blue-deep); margin-bottom:6px; }
+    .team-quote { font-size:.84rem; color:var(--text-mid); line-height:1.7; font-style:italic; }
+    .team-quote .bn { font-family:var(--ff-bn); font-style:normal; display:block; margin-top:4px; font-size:.8rem; color:var(--blue-bright); }
+    .anon-note { text-align:center; background:var(--blue-pale); border-radius:10px; padding:28px; max-width:640px; margin:0 auto 50px; }
+    .anon-note p { color:var(--text-mid); font-size:.9rem; line-height:1.8; }
+    .anon-note .bn { font-family:var(--ff-bn); display:block; margin-top:8px; color:var(--blue-bright); }
+  </style>
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo"><span class="logo-d">D</span><span class="logo-rest">are to Talk</span><span class="logo-bn">| সাহস করে বলো</span></div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="team.html" class="active">Team</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-hero">
+    <h1>Our Team <span class="bn">আমাদের দল</span></h1>
+    <p>Bold, hardworking and daring — we are Dare to Talk.</p>
+  </div>
+
+  <section class="section">
+    <div class="anon-note">
+      <p>🎭 Our team operates anonymously. We let our work speak for itself — because courage doesn't need a name, it needs a voice.</p>
+      <span class="bn">আমাদের টিম পরিচয়হীনভাবে কাজ করে। আমরা বিশ্বাস করি সাহসের কোনো নাম লাগে না, শুধু কণ্ঠ লাগে।</span>
+    </div>
+
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar" style="background:linear-gradient(135deg,#1a3a6b,#1565c0)">🦁</div>
+        <div class="team-info">
+          <span class="team-role">Founder & Editor</span>
+          <h3 class="team-name">The Architect</h3>
+          <p class="team-quote">"Courage is the foundation of everything we do."<span class="bn">"সাহসই আমাদের ভিত্তি।"</span></p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="background:linear-gradient(135deg,#0d5ca6,#1e88e5)">🦅</div>
+        <div class="team-info">
+          <span class="team-role">Lead Writer</span>
+          <h3 class="team-name">The Wordsmith</h3>
+          <p class="team-quote">"Every word is a declaration of freedom."<span class="bn">"প্রতিটি শব্দ স্বাধীনতার ঘোষণা।"</span></p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="background:linear-gradient(135deg,#1565c0,#0a47a0)">🐺</div>
+        <div class="team-info">
+          <span class="team-role">Creative Director</span>
+          <h3 class="team-name">The Visionary</h3>
+          <p class="team-quote">"Design is how we make daring feel beautiful."<span class="bn">"ডিজাইন হল সাহসকে সুন্দর করার উপায়।"</span></p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="background:linear-gradient(135deg,#0a1f44,#1565c0)">🔥</div>
+        <div class="team-info">
+          <span class="team-role">Bengali Editor</span>
+          <h3 class="team-name">The Voice</h3>
+          <p class="team-quote">"বাংলায় সাহস প্রকাশ করা আমার আনন্দ।"<span class="bn">"My joy is expressing courage in Bengali."</span></p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="background:linear-gradient(135deg,#1e88e5,#0d3b8a)">⚡</div>
+        <div class="team-info">
+          <span class="team-role">Community Manager</span>
+          <h3 class="team-name">The Connector</h3>
+          <p class="team-quote">"Our community is our greatest story."<span class="bn">"আমাদের সম্প্রদায়ই আমাদের শ্রেষ্ঠ গল্প।"</span></p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="background:linear-gradient(135deg,#0d3b8a,#1e88e5)">🌊</div>
+        <div class="team-info">
+          <span class="team-role">Social Media</span>
+          <h3 class="team-name">The Amplifier</h3>
+          <p class="team-quote">"Bold voices deserve the biggest stage."<span class="bn">"সাহসী কণ্ঠের সবচেয়ে বড় মঞ্চ দরকার।"</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="cta-inner">
+      <h2>Join the Movement <span class="bn">আন্দোলনে যোগ দাও</span></h2>
+      <p>Want to contribute or collaborate? We're always looking for bold voices.</p>
+      <a href="contact.html" class="btn-primary">Work With Us</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand"><span class="nav-logo"><span class="logo-d">D</span><span class="logo-rest">are to Talk</span></span><p>Courage is all that matters.<br><span class="bn">সাহসই সব।</span></p></div>
+      <div class="footer-links"><h5>Pages</h5><a href="../index.html">Home</a><a href="blog.html">Blog</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="portfolio.html">Portfolio</a><a href="team.html">Team</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+      <div class="footer-contact"><h5>Contact</h5><p>📧 samirkahn2025@gmail.com</p><p>📍 Dhaka, Bangladesh</p></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 Dare to Talk. All rights reserved.</p></div>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog — Dare to Talk</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Barlow:wght@300;400;600&family=Noto+Sans+Bengali:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    .blog-filter { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:36px; }
+    .filter-btn { padding:8px 20px; border-radius:30px; border:2px solid var(--blue-light); background:transparent; color:var(--blue-mid); font-family:var(--ff-body); font-weight:600; cursor:pointer; transition:.2s; }
+    .filter-btn.active, .filter-btn:hover { background:var(--blue-bright); color:#fff; border-color:var(--blue-bright); }
+    .blog-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:28px; }
+    .blog-card { background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 4px 18px rgba(21,101,192,.1); transition:.25s; }
+    .blog-card:hover { transform:translateY(-5px); box-shadow:0 12px 32px rgba(21,101,192,.18); }
+    .blog-card-img { height:180px; }
+    .blog-card-body { padding:22px; }
+    .blog-meta { display:flex; gap:12px; align-items:center; margin-bottom:10px; }
+    .blog-meta .tag { background:var(--blue-pale); color:var(--blue-mid); font-size:.7rem; font-weight:700; padding:3px 10px; border-radius:20px; text-transform:uppercase; letter-spacing:1px; }
+    .blog-meta .date { font-size:.78rem; color:var(--text-light); }
+    .blog-card-body h3 { font-family:var(--ff-display); font-size:1.1rem; color:var(--blue-deep); margin-bottom:8px; line-height:1.45; }
+    .blog-card-body p { font-size:.86rem; color:var(--text-mid); line-height:1.7; margin-bottom:14px; }
+    .blog-card-body .card-link { color:var(--blue-bright); font-weight:700; font-size:.85rem; text-decoration:none; }
+  </style>
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo"><span class="logo-d">D</span><span class="logo-rest">are to Talk</span><span class="logo-bn">| সাহস করে বলো</span></div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-hero">
+    <h1>The Blog <span class="bn">ব্লগ</span></h1>
+    <p>Stories of courage, lifestyle, and daring voices from around Bangladesh and beyond.</p>
+  </div>
+
+  <section class="section">
+    <div class="blog-filter">
+      <button class="filter-btn active">All</button>
+      <button class="filter-btn">Lifestyle</button>
+      <button class="filter-btn">Opinion</button>
+      <button class="filter-btn">জীবন</button>
+      <button class="filter-btn">Courage</button>
+      <button class="filter-btn">Society</button>
+    </div>
+    <div class="blog-grid">
+      <!-- Blog Card 1 -->
+      <article class="blog-card">
+        <div class="blog-card-img" style="background:linear-gradient(135deg,#1a3a6b,#1565c0)"></div>
+        <div class="blog-card-body">
+          <div class="blog-meta"><span class="tag">Lifestyle</span><span class="date">Jan 2025</span></div>
+          <h3>The Day I Chose Courage Over Comfort</h3>
+          <p>Sometimes the bravest thing you can do is speak the truth when silence feels safer...</p>
+          <a href="#" class="card-link">Read More →</a>
+        </div>
+      </article>
+      <!-- Blog Card 2 -->
+      <article class="blog-card">
+        <div class="blog-card-img" style="background:linear-gradient(135deg,#0d5ca6,#1e88e5)"></div>
+        <div class="blog-card-body">
+          <div class="blog-meta"><span class="tag">জীবন</span><span class="date">Feb 2025</span></div>
+          <h3>সাহসের গল্প যা বদলে দিয়েছে সব</h3>
+          <p>ভয় কে জয় করার সেই মুহূর্তগুলো যা আমাদের নতুন করে গড়ে দেয়...</p>
+          <a href="#" class="card-link">আরো পড়ুন →</a>
+        </div>
+      </article>
+      <!-- Blog Card 3 -->
+      <article class="blog-card">
+        <div class="blog-card-img" style="background:linear-gradient(135deg,#1565c0,#0a47a0)"></div>
+        <div class="blog-card-body">
+          <div class="blog-meta"><span class="tag">Opinion</span><span class="date">Feb 2025</span></div>
+          <h3>Why Your Story Deserves to Be Heard</h3>
+          <p>Every voice has a story. Every story has the power to change someone's world...</p>
+          <a href="#" class="card-link">Read More →</a>
+        </div>
+      </article>
+      <!-- Blog Card 4 -->
+      <article class="blog-card">
+        <div class="blog-card-img" style="background:linear-gradient(135deg,#0a1f44,#1565c0)"></div>
+        <div class="blog-card-body">
+          <div class="blog-meta"><span class="tag">Courage</span><span class="date">Mar 2025</span></div>
+          <h3>Breaking Free: A Story of Self-Discovery</h3>
+          <p>She left behind everything familiar and found herself in the most unexpected place...</p>
+          <a href="#" class="card-link">Read More →</a>
+        </div>
+      </article>
+      <!-- Blog Card 5 -->
+      <article class="blog-card">
+        <div class="blog-card-img" style="background:linear-gradient(135deg,#1e88e5,#1565c0)"></div>
+        <div class="blog-card-body">
+          <div class="blog-meta"><span class="tag">Society</span><span class="date">Mar 2025</span></div>
+          <h3>সমাজের বিরুদ্ধে দাঁড়ানোর সাহস</h3>
+          <p>যখন সবাই না বলে, তখন একা হ্যাঁ বলার সাহস রাখা কঠিন কিন্তু জরুরি...</p>
+          <a href="#" class="card-link">আরো পড়ুন →</a>
+        </div>
+      </article>
+      <!-- Blog Card 6 -->
+      <article class="blog-card">
+        <div class="blog-card-img" style="background:linear-gradient(135deg,#0d3b8a,#1e88e5)"></div>
+        <div class="blog-card-body">
+          <div class="blog-meta"><span class="tag">Lifestyle</span><span class="date">Apr 2025</span></div>
+          <h3>Living Boldly: 7 Habits of Fearless People</h3>
+          <p>What separates those who merely dream from those who dare to live differently...</p>
+          <a href="#" class="card-link">Read More →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="cta-inner">
+      <h2>Write For Us <span class="bn">আমাদের জন্য লিখুন</span></h2>
+      <p>Got a daring story? Submit it and join our community of bold voices.</p>
+      <p class="bn">সাহসী গল্প আছে? পাঠিয়ে দিন।</p>
+      <a href="contact.html" class="btn-primary">Submit a Story</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand"><span class="nav-logo"><span class="logo-d">D</span><span class="logo-rest">are to Talk</span></span><p>Courage is all that matters.<br><span class="bn">সাহসই সব।</span></p></div>
+      <div class="footer-links"><h5>Pages</h5><a href="../index.html">Home</a><a href="blog.html">Blog</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="portfolio.html">Portfolio</a><a href="team.html">Team</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+      <div class="footer-contact"><h5>Contact</h5><p>📧 samirkahn2025@gmail.com</p><p>📍 Dhaka, Bangladesh</p></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 Dare to Talk. All rights reserved.</p></div>
+  </footer>
+  <script src="../js/main.js"></script>
+  <script>
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

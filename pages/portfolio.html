@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio — Dare to Talk</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Barlow:wght@300;400;600&family=Noto+Sans+Bengali:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    .portfolio-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:24px; }
+    .portfolio-item { border-radius:12px; overflow:hidden; position:relative; cursor:pointer; }
+    .portfolio-img { height:240px; display:flex; align-items:flex-end; padding:20px; position:relative; }
+    .portfolio-overlay { position:absolute; inset:0; background:rgba(10,31,68,.6); opacity:0; transition:.3s; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:24px; }
+    .portfolio-item:hover .portfolio-overlay { opacity:1; }
+    .portfolio-overlay h3 { font-family:var(--ff-display); color:#fff; font-size:1.2rem; margin-bottom:8px; }
+    .portfolio-overlay p { color:rgba(255,255,255,.8); font-size:.85rem; }
+    .portfolio-label { position:relative; z-index:1; background:rgba(255,255,255,.95); display:inline-block; padding:6px 14px; border-radius:4px; }
+    .portfolio-label span { font-weight:700; font-size:.8rem; color:var(--blue-mid); letter-spacing:1px; text-transform:uppercase; }
+    .stats { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; margin:60px 0; }
+    .stat { text-align:center; padding:30px 20px; background:var(--blue-pale); border-radius:10px; }
+    .stat-num { font-family:var(--ff-display); font-size:2.5rem; font-weight:700; color:var(--blue-mid); }
+    .stat-label { font-size:.85rem; color:var(--text-mid); margin-top:6px; }
+    .stat-bn { font-family:var(--ff-bn); font-size:.8rem; color:var(--blue-bright); }
+    @media(max-width:600px){ .stats{grid-template-columns:1fr 1fr;} }
+  </style>
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo"><span class="logo-d">D</span><span class="logo-rest">are to Talk</span><span class="logo-bn">| সাহস করে বলো</span></div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="portfolio.html" class="active">Portfolio</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-hero">
+    <h1>Portfolio <span class="bn">পোর্টফোলিও</span></h1>
+    <p>A showcase of bold stories, brave voices, and impactful content we've published.</p>
+  </div>
+
+  <section class="section">
+    <div class="stats">
+      <div class="stat"><div class="stat-num">50+</div><div class="stat-label">Stories Published</div><div class="stat-bn">গল্প প্রকাশিত</div></div>
+      <div class="stat"><div class="stat-num">12+</div><div class="stat-label">Brand Partners</div><div class="stat-bn">ব্র্যান্ড পার্টনার</div></div>
+      <div class="stat"><div class="stat-num">5K+</div><div class="stat-label">Monthly Readers</div><div class="stat-bn">মাসিক পাঠক</div></div>
+      <div class="stat"><div class="stat-num">2</div><div class="stat-label">Languages</div><div class="stat-bn">ভাষা</div></div>
+    </div>
+
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <div class="portfolio-img" style="background:linear-gradient(135deg,#1a3a6b,#1565c0)">
+          <div class="portfolio-overlay"><h3>Courage Campaign 2024</h3><p>A series of 10 bold personal stories from Bangladesh</p></div>
+          <div class="portfolio-label"><span>Blog Series</span></div>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <div class="portfolio-img" style="background:linear-gradient(135deg,#0d3b8a,#1e88e5)">
+          <div class="portfolio-overlay"><h3>Brand Collab — StyleBD</h3><p>Sponsored lifestyle feature reaching 3,000+ readers</p></div>
+          <div class="portfolio-label"><span>Sponsored</span></div>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <div class="portfolio-img" style="background:linear-gradient(135deg,#0a1f44,#1565c0)">
+          <div class="portfolio-overlay"><h3>সাহসের কণ্ঠ Series</h3><p>Bengali-language personal expression series</p></div>
+          <div class="portfolio-label"><span>বাংলা সিরিজ</span></div>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <div class="portfolio-img" style="background:linear-gradient(135deg,#1565c0,#0a47a0)">
+          <div class="portfolio-overlay"><h3>Opinion Week</h3><p>7-day opinion feature attracting 25+ contributors</p></div>
+          <div class="portfolio-label"><span>Opinion</span></div>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <div class="portfolio-img" style="background:linear-gradient(135deg,#1e88e5,#0d5ca6)">
+          <div class="portfolio-overlay"><h3>Lifestyle Guide 2025</h3><p>Comprehensive lifestyle content package for spring</p></div>
+          <div class="portfolio-label"><span>Lifestyle</span></div>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <div class="portfolio-img" style="background:linear-gradient(135deg,#0d3b8a,#1e88e5)">
+          <div class="portfolio-overlay"><h3>Youth Voices</h3><p>Platform for young Bangladeshi writers to debut</p></div>
+          <div class="portfolio-label"><span>Community</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="cta-inner">
+      <h2>Want to Be Featured? <span class="bn">ফিচার হতে চাও?</span></h2>
+      <p>Submit your story or reach out about collaboration opportunities.</p>
+      <a href="contact.html" class="btn-primary">Get in Touch</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand"><span class="nav-logo"><span class="logo-d">D</span><span class="logo-rest">are to Talk</span></span><p>Courage is all that matters.<br><span class="bn">সাহসই সব।</span></p></div>
+      <div class="footer-links"><h5>Pages</h5><a href="../index.html">Home</a><a href="blog.html">Blog</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="portfolio.html">Portfolio</a><a href="team.html">Team</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+      <div class="footer-contact"><h5>Contact</h5><p>📧 samirkahn2025@gmail.com</p><p>📍 Dhaka, Bangladesh</p></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 Dare to Talk. All rights reserved.</p></div>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>

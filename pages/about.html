@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About — Dare to Talk</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Barlow:wght@300;400;600&family=Noto+Sans+Bengali:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .about-visual { background: linear-gradient(135deg,#1565c0,#0a1f44); border-radius: 12px; height: 380px; display:flex; align-items:center; justify-content:center; }
+    .about-visual span { font-family: var(--ff-display); font-size: 6rem; color: rgba(255,255,255,.15); font-weight:900; }
+    .about-text h2 { font-family: var(--ff-display); font-size: 2rem; color: var(--blue-deep); margin-bottom: 20px; }
+    .about-text p { font-size:.95rem; line-height:1.9; color:var(--text-mid); margin-bottom:16px; }
+    .about-text .bn { font-family:var(--ff-bn); }
+    .values { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:16px; }
+    .value-item { text-align:center; padding:28px 20px; background:var(--blue-pale); border-radius:10px; }
+    .value-item .vi { font-size:2.2rem; margin-bottom:10px; }
+    .value-item h4 { font-family:var(--ff-display); color:var(--blue-deep); font-size:1rem; margin-bottom:6px; }
+    .value-item p { font-size:.82rem; color:var(--text-mid); }
+    @media(max-width:768px){ .about-grid{grid-template-columns:1fr;} .values{grid-template-columns:1fr 1fr;} }
+  </style>
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo"><span class="logo-d">D</span><span class="logo-rest">are to Talk</span><span class="logo-bn">| সাহস করে বলো</span></div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-hero">
+    <h1>About Us <span class="bn">আমাদের সম্পর্কে</span></h1>
+    <p>Bold. Daring. Unapologetic. This is who we are.</p>
+  </div>
+
+  <section class="section">
+    <div class="about-grid">
+      <div class="about-visual"><span>DTT</span></div>
+      <div class="about-text">
+        <h2>We Are Dare to Talk</h2>
+        <p>We are hardworking, bold and daring people who believe that every voice deserves to be heard. <span class="bn">আমরা পরিশ্রমী, সাহসী এবং দুঃসাহসিক মানুষ।</span></p>
+        <p>Dare to Talk is a lifestyle blog and magazine platform born from the belief that courage is the one thing that separates those who live fully from those who merely exist. We created this space for people who have something real to say — and the courage to say it.</p>
+        <p class="bn">সাহস করে বলো — এটি শুধু একটি নাম নয়, এটি একটি দর্শন। আমরা বিশ্বাস করি প্রতিটি মানুষের একটি গল্প আছে এবং সেই গল্প বলার অধিকার আছে।</p>
+        <p>Whether you write in English or Bengali, whether your story is personal or political, big or small — this is your platform. We amplify what others are afraid to say.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--off-white);padding-top:60px;padding-bottom:60px;">
+    <div class="section-header"><h2>Our Values <span class="bn">আমাদের মূল্যবোধ</span></h2></div>
+    <div class="values">
+      <div class="value-item"><div class="vi">🔥</div><h4>Boldness</h4><p class="bn">সাহসিকতা</p><p>We speak without fear and write without filters.</p></div>
+      <div class="value-item"><div class="vi">🎯</div><h4>Honesty</h4><p class="bn">সততা</p><p>Truth over comfort, always.</p></div>
+      <div class="value-item"><div class="vi">🌍</div><h4>Inclusivity</h4><p class="bn">অন্তর্ভুক্তি</p><p>Every background, every language, every voice.</p></div>
+      <div class="value-item"><div class="vi">💪</div><h4>Hard Work</h4><p class="bn">পরিশ্রম</p><p>Quality content, consistent effort.</p></div>
+      <div class="value-item"><div class="vi">🗣️</div><h4>Expression</h4><p class="bn">প্রকাশ</p><p>Your story deserves to be told.</p></div>
+      <div class="value-item"><div class="vi">🤝</div><h4>Community</h4><p class="bn">সম্প্রদায়</p><p>We grow together, one story at a time.</p></div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="cta-inner">
+      <h2>Join Our Story <span class="bn">আমাদের গল্পে যোগ দাও</span></h2>
+      <p>Have something bold to say? Write it. We'll publish it.</p>
+      <p class="bn">সাহস আছে? লিখে পাঠাও। আমরা প্রকাশ করব।</p>
+      <a href="contact.html" class="btn-primary">Submit Your Story</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand"><span class="nav-logo"><span class="logo-d">D</span><span class="logo-rest">are to Talk</span></span><p>Courage is all that matters.<br><span class="bn">সাহসই সব।</span></p></div>
+      <div class="footer-links"><h5>Pages</h5><a href="../index.html">Home</a><a href="blog.html">Blog</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="portfolio.html">Portfolio</a><a href="team.html">Team</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+      <div class="footer-contact"><h5>Contact</h5><p>📧 samirkahn2025@gmail.com</p><p>📍 Dhaka, Bangladesh</p></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 Dare to Talk. All rights reserved. | <span class="bn">সর্বস্বত্ব সংরক্ষিত।</span></p></div>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>

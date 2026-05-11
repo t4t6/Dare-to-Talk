@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pricing — Dare to Talk</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Barlow:wght@300;400;600&family=Noto+Sans+Bengali:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    .pricing-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:28px; max-width:1100px; margin:0 auto; }
+    .pricing-card { background:#fff; border-radius:12px; padding:40px 32px; box-shadow:0 4px 20px rgba(21,101,192,.1); border:2px solid var(--blue-pale); position:relative; transition:.25s; }
+    .pricing-card:hover { transform:translateY(-6px); box-shadow:0 14px 36px rgba(21,101,192,.2); }
+    .pricing-card.popular { border-color:var(--blue-bright); }
+    .popular-badge { position:absolute; top:-14px; left:50%; transform:translateX(-50%); background:var(--gold); color:var(--blue-deep); font-size:.75rem; font-weight:700; padding:4px 18px; border-radius:20px; letter-spacing:1px; white-space:nowrap; }
+    .plan-name { font-family:var(--ff-display); font-size:1.4rem; color:var(--blue-deep); margin-bottom:4px; }
+    .plan-bn { font-family:var(--ff-bn); color:var(--blue-bright); font-size:.85rem; margin-bottom:20px; display:block; }
+    .plan-price { font-size:2.8rem; font-weight:700; color:var(--blue-deep); line-height:1; }
+    .plan-price span { font-size:1rem; font-weight:400; color:var(--text-light); }
+    .plan-desc { color:var(--text-mid); font-size:.88rem; margin:14px 0 24px; line-height:1.7; }
+    .plan-features { list-style:none; margin-bottom:30px; }
+    .plan-features li { padding:9px 0; border-bottom:1px solid var(--blue-pale); font-size:.88rem; color:var(--text-mid); display:flex; gap:10px; }
+    .plan-features li::before { content:"✓"; color:var(--blue-bright); font-weight:700; flex-shrink:0; }
+    .plan-features li.no::before { content:"✗"; color:#ccc; }
+    .plan-features li.no { color:#bbb; }
+    .plan-btn { display:block; text-align:center; padding:13px; border-radius:var(--radius); font-weight:700; text-decoration:none; transition:.2s; }
+    .plan-btn-outline { border:2px solid var(--blue-bright); color:var(--blue-bright); }
+    .plan-btn-outline:hover { background:var(--blue-bright); color:#fff; }
+    .plan-btn-solid { background:var(--blue-bright); color:#fff; }
+    .plan-btn-solid:hover { background:var(--blue-deep); }
+    .plan-btn-gold { background:var(--gold); color:var(--blue-deep); }
+    .plan-btn-gold:hover { background:#e6951a; }
+    .pricing-note { text-align:center; margin-top:40px; color:var(--text-light); font-size:.88rem; }
+    .pricing-note .bn { font-family:var(--ff-bn); display:block; margin-top:4px; }
+  </style>
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo"><span class="logo-d">D</span><span class="logo-rest">are to Talk</span><span class="logo-bn">| সাহস করে বলো</span></div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="pricing.html" class="active">Pricing</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-hero">
+    <h1>Pricing Plans <span class="bn">মূল্য তালিকা</span></h1>
+    <p>Transparent, honest pricing for bold voices and brave brands.</p>
+  </div>
+
+  <section class="section">
+    <div class="pricing-grid">
+
+      <!-- Free -->
+      <div class="pricing-card">
+        <h3 class="plan-name">Voice</h3>
+        <span class="plan-bn">কণ্ঠস্বর</span>
+        <div class="plan-price">Free <span>/ forever</span></div>
+        <p class="plan-desc">For individuals who want to share their story with the world at no cost.</p>
+        <ul class="plan-features">
+          <li>1 guest post per month</li>
+          <li>English & Bengali accepted</li>
+          <li>Basic editorial feedback</li>
+          <li>Author bio published</li>
+          <li class="no">Social media promotion</li>
+          <li class="no">Priority review</li>
+          <li class="no">Newsletter feature</li>
+        </ul>
+        <a href="contact.html" class="plan-btn plan-btn-outline">Get Started</a>
+      </div>
+
+      <!-- Popular -->
+      <div class="pricing-card popular">
+        <div class="popular-badge">⭐ Most Popular</div>
+        <h3 class="plan-name">Bold</h3>
+        <span class="plan-bn">সাহসী</span>
+        <div class="plan-price">৳500 <span>/ month</span></div>
+        <p class="plan-desc">For active writers and creators who want maximum reach and regular features.</p>
+        <ul class="plan-features">
+          <li>4 guest posts per month</li>
+          <li>English & Bengali accepted</li>
+          <li>Full editorial support</li>
+          <li>Author spotlight page</li>
+          <li>Social media promotion</li>
+          <li>Priority review (48 hrs)</li>
+          <li class="no">Newsletter feature</li>
+        </ul>
+        <a href="contact.html" class="plan-btn plan-btn-solid">Choose Bold</a>
+      </div>
+
+      <!-- Brand -->
+      <div class="pricing-card">
+        <h3 class="plan-name">Brand</h3>
+        <span class="plan-bn">ব্র্যান্ড</span>
+        <div class="plan-price">৳2,000 <span>/ month</span></div>
+        <p class="plan-desc">For businesses and brands who want premium visibility on our platform.</p>
+        <ul class="plan-features">
+          <li>Unlimited sponsored posts</li>
+          <li>Newsletter feature (weekly)</li>
+          <li>Homepage banner placement</li>
+          <li>Dedicated brand profile</li>
+          <li>Social media campaigns</li>
+          <li>Priority review (24 hrs)</li>
+          <li>Monthly analytics report</li>
+        </ul>
+        <a href="contact.html" class="plan-btn plan-btn-gold">Contact Us</a>
+      </div>
+
+    </div>
+    <p class="pricing-note">
+      All prices are in Bangladeshi Taka (BDT). Custom packages available on request.
+      <span class="bn">কাস্টম প্যাকেজের জন্য আমাদের সাথে যোগাযোগ করুন।</span>
+    </p>
+  </section>
+
+  <section class="cta-section">
+    <div class="cta-inner">
+      <h2>Not Sure Which Plan? <span class="bn">কোন প্ল্যান বেছে নেবেন বুঝতে পারছেন না?</span></h2>
+      <p>Write to us — we'll find the right fit for your voice and budget.</p>
+      <a href="contact.html" class="btn-primary">Talk to Us</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand"><span class="nav-logo"><span class="logo-d">D</span><span class="logo-rest">are to Talk</span></span><p>Courage is all that matters.<br><span class="bn">সাহসই সব।</span></p></div>
+      <div class="footer-links"><h5>Pages</h5><a href="../index.html">Home</a><a href="blog.html">Blog</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="portfolio.html">Portfolio</a><a href="team.html">Team</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+      <div class="footer-contact"><h5>Contact</h5><p>📧 samirkahn2025@gmail.com</p><p>📍 Dhaka, Bangladesh</p></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 Dare to Talk. All rights reserved.</p></div>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>
